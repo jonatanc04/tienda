@@ -19,4 +19,5 @@ Route::get('/', function () {
 })->name('inicio');
 
 Route::resource('tienda', TiendaController::class)
-->only(['index', 'show']);
+->only(['index', 'show', 'create', 'edit']);
+

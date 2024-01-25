@@ -13,7 +13,7 @@ class TiendaController extends Controller
      */
     public function index()
     {
-        //
+        return view('tienda.index');
     }
 
     /**
@@ -23,7 +23,7 @@ class TiendaController extends Controller
      */
     public function create()
     {
-        //
+        return "Crear";
     }
 
     /**
@@ -45,7 +45,7 @@ class TiendaController extends Controller
      */
     public function show($id)
     {
-        //
+        return view('tienda.show');
     }
 
     /**
@@ -56,7 +56,7 @@ class TiendaController extends Controller
      */
     public function edit($id)
     {
-        //
+        return "Editar";
     }
 
     /**
