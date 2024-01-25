@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\TiendaController;
 
 /*
 |--------------------------------------------------------------------------
@@ -16,3 +17,6 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('inicio');
 })->name('inicio');
+
+Route::resource('tienda', TiendaController::class)
+->only(['index', 'show']);

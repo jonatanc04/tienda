@@ -4,8 +4,8 @@
   </div>
   <div class="rutas-container">
     <a href="{{ route('inicio') }}"><p>Inicio</p></a>
-    <a href="{{ route('inicio') }}"><p>Productos</p></a>
-    <a href="{{ route('inicio') }}"><p>Carrito</p></a>
+    <a href="{{ route('tienda.index') }}"><p>Productos</p></a>
+    <a href="{{ route('tienda') }}"><p>Carrito</p></a>
     <a href="{{ route('inicio') }}"><p>Acceder</p></a>
   </div>
   
