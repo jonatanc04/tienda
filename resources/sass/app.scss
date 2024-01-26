@@ -96,7 +96,75 @@ main {
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: center;
+
+    h1 {
+        margin: 20px;
+    }
+
+    a {
+        color: black;
+        text-decoration: none;
+    }
+
+    .container-products {
+        width: 1000px;
+        height: 700px;
+
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        align-items: center;
+        justify-content: center;
+
+        p {
+            margin: 0;
+        }
+
+        .product {
+
+            cursor: pointer;
+            width: 300px;
+            height: 200px;
+            margin: 10px;
+
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+
+            border: 3px solid rgb(241, 110, 110);
+            border-radius: 20px;
+
+            transition: ease-out 0.3s;
+
+            &:hover {
+                box-shadow: 6px 6px 0;
+                transform: translateX(-6px) translateY(-6px);
+            }
+
+            .image-product {
+                width: 150px;
+                height: 150px;
+                margin-right: 20px;
+                background-color: gray;
+            }
+
+            h2 {
+                background-color: rgb(72, 183, 211);
+                text-align: center;
+                padding-top: 4px;
+                margin-top: 55px;
+                margin-left: 120px;
+                border-radius: 50px;
+                width: 60px;
+                height: 40px;
+            }
+
+            p {
+                font-size: 20px;
+            }
+        }
+    }
 }
 
 footer {

@@ -12050,7 +12050,61 @@ main {
   display: flex;
   flex-direction: column;
   align-items: center;
+}
+main h1, main .h1 {
+  margin: 20px;
+}
+main a {
+  color: black;
+  text-decoration: none;
+}
+main .container-products {
+  width: 1000px;
+  height: 700px;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-items: center;
   justify-content: center;
+}
+main .container-products p {
+  margin: 0;
+}
+main .container-products .product {
+  cursor: pointer;
+  width: 300px;
+  height: 200px;
+  margin: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  border: 3px solid rgb(241, 110, 110);
+  border-radius: 20px;
+  transition: ease-out 0.3s;
+}
+main .container-products .product:hover {
+  box-shadow: 6px 6px 0;
+  transform: translateX(-6px) translateY(-6px);
+}
+main .container-products .product .image-product {
+  width: 150px;
+  height: 150px;
+  margin-right: 20px;
+  background-color: gray;
+}
+main .container-products .product h2, main .container-products .product .h2 {
+  background-color: rgb(72, 183, 211);
+  text-align: center;
+  padding-top: 4px;
+  margin-top: 55px;
+  margin-left: 120px;
+  border-radius: 50px;
+  width: 60px;
+  height: 40px;
+}
+main .container-products .product p {
+  font-size: 20px;
 }
 
 footer {

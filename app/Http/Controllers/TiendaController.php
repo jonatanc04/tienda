@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\Productos;
 
 class TiendaController extends Controller
 {
@@ -13,7 +14,8 @@ class TiendaController extends Controller
      */
     public function index()
     {
-        return view('tienda.index');
+        $productos = Productos::get();
+        return view('tienda.index', compact('productos'));
     }
 
     /**

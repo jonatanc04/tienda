@@ -21,3 +21,6 @@ Route::get('/', function () {
 Route::resource('tienda', TiendaController::class)
 ->only(['index', 'show', 'create', 'edit']);
 
+Route::get('error', function () {
+    return view('404');
+});
