@@ -12102,6 +12102,82 @@ main .container-products .product h2, main .container-products .product .h2 {
 main .container-products .product p {
   font-size: 20px;
 }
+main .container-unique-product {
+  width: 1000px;
+  height: 700px;
+  border: 3px solid rgb(241, 110, 110);
+  border-radius: 20px;
+  display: flex;
+  flex-direction: row;
+}
+main .container-unique-product .product-info {
+  width: 50%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+main .container-unique-product .product-info p {
+  width: 90%;
+  font-size: 18px;
+  margin-bottom: 55px;
+  text-align: justify;
+}
+main .container-unique-product .product-info .formulario-compra p {
+  text-align: center;
+  font-size: 25px;
+  margin: 10px;
+}
+main .container-unique-product .product-info .formulario-compra .cantidad-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+main .container-unique-product .product-info .formulario-compra form {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+}
+main .container-unique-product .product-info .formulario-compra input[type=number] {
+  width: 65px;
+  height: 40px;
+  padding: 5px;
+  font-size: 25px;
+}
+main .container-unique-product .product-info .formulario-compra input:first-child {
+  margin-top: 10px;
+}
+main .container-unique-product .product-info .formulario-compra input[type=submit] {
+  width: 140px;
+  height: 40px;
+  margin-left: 10px;
+  font-size: 15px;
+  border: none;
+  border-radius: 25px;
+  background-color: rgb(241, 110, 110);
+  transition: ease-out 0.3s;
+}
+main .container-unique-product .product-info .formulario-compra input[type=submit]:hover {
+  color: white;
+  background-color: rgb(194, 65, 65);
+  box-shadow: 3px 3px 0 black;
+  transform: translateX(-3px) translateY(-3px);
+}
+main .container-unique-product .image-container {
+  width: 50%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+main .container-unique-product .image-container img {
+  width: 500px;
+  height: 500px;
+  padding-right: 2px;
+}
 
 footer {
   background-color: rgb(119, 209, 231);

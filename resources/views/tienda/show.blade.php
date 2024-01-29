@@ -1,7 +1,27 @@
 @extends('plantilla')
 
-@section('titulo', 'A&T Nutrition - ()')
+@section('titulo', 'A&T Nutrition - '.$producto->nombre)
 
 @section('contenido')
-  <p>Información del Productos</p>
+
+  <h1>{{$producto->nombre}}</h1>
+  <div class='container-unique-product'>
+    <div class="product-info">
+      <p>{{$producto->descripcion}}</p>
+      <div class='formulario-compra'>
+        <p>Cantidad</p>
+        <div class="cantidad-container">
+          <form action="#" method="POST">
+            @csrf
+            <input type="number" name="cantidad" value="1" min="1" max="100">
+            <input type="submit" name="anyade" value="Añadir al carrito">
+          </form>  
+        </div>
+      </div>
+    </div>
+    <div class="image-container">
+      <img src="{{asset("img/$producto->foto")}}"/>
+    </div>
+  </div>
+  
 @endsection

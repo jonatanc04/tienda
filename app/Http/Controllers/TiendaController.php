@@ -47,7 +47,8 @@ class TiendaController extends Controller
      */
     public function show($id)
     {
-        return view('tienda.show');
+        $producto = Producto::find($id);
+        return view('tienda.show', compact('producto', 'id'));
     }
 
     /**
