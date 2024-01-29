@@ -9,9 +9,8 @@
     @forelse($productos as $producto)
       <a href="{{ route('tienda.show', $producto->id) }}">
         <div class='product'>
-          <div class="image-product">
-            <h2>{{ $producto->precio }}€</h2>
-          </div>
+          <img src={{asset("img/$producto->foto")}} class="image-product" />
+          <h2>{{ $producto->precio }}€</h2>
           <p>{{ $producto->nombre }}</p>
         </div>
       </a>
