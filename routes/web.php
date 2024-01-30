@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\TiendaController;
+use App\Http\Controllers\LoginController;
 
 /*
 |--------------------------------------------------------------------------
@@ -18,9 +19,12 @@ Route::get('/', function () {
     return view('inicio');
 })->name('inicio');
 
-Route::resource('tienda', TiendaController::class)
-->only(['index', 'show', 'create', 'edit']);
+Route::resource('tienda', TiendaController::class);
 
 Route::get('error', function () {
     return view('404');
 });
+
+Route::get('login', [LoginController::class, 'loginForm'])->name('login');
+Route::post('login', [LoginController::class, 'login']);
+Route::get('logout', [LoginController::class, 'logout'])->name('logout');

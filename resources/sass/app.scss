@@ -256,6 +256,55 @@ main {
             }
         }
     }
+
+    .form-container {
+        width: 1000px;
+        height: 700px;
+        border: 3px solid rgb(241, 110, 110);
+        border-radius: 20px;
+
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+
+        form {
+            width: 60%;
+
+            label {
+                margin-bottom: 10px;
+                font-size: 20px;
+            }
+            
+            input {
+                margin-bottom: 10px;
+            }
+
+            .log-button {
+                background-color: rgb(241, 110, 110);
+                width: 100px;
+                height: 40px;
+                font-size: 15px;
+                color: white;
+                border: none;
+                border-radius: 20px;
+                transition: ease-out 0.3s;
+
+                &:hover {
+                    background-color: rgb(194, 65, 65);
+                    box-shadow: 3px 3px 0 black;
+                    transform: translateX(-3px) translateY(-3px);
+                }
+            }
+        }
+
+        .error-mensaje {
+            height: 1px;
+            color: red;
+            padding: 10px;
+            font-size: 20px;
+        }
+    }
 }
 
 footer {
