@@ -8,7 +8,7 @@
       <a href="{{ route('tienda.index') }}"><p>Productos</p></a>
       <a href="{{ route('inicio') }}"><p>Carrito</p></a>
       @if(auth()->user()->rol === 'admin')
-        <a href="{{ route('inicio') }}"><p>Gestión</p></a>
+        <a href="{{ route('user.index') }}"><p>Gestión</p></a>
       @endif
       <a href="{{ route('logout') }}"><p>Cerrar Sesión</p></a>
     @else

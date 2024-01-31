@@ -12080,6 +12080,141 @@ main .inicio-container .img-container img {
 }
 main .inicio-container .text-container {
   width: 60%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+main .inicio-container .text-container .logo-container-init {
+  height: -moz-fit-content;
+  height: fit-content;
+  display: flex;
+  flex-direction: row;
+  margin: 20px;
+}
+main .inicio-container .text-container .logo-container-init p, main .inicio-container .text-container .logo-container-init h1, main .inicio-container .text-container .logo-container-init .h1 {
+  margin: 0;
+  width: -moz-fit-content;
+  width: fit-content;
+  height: -moz-fit-content;
+  height: fit-content;
+}
+main .inicio-container .text-container .logo-container-init p {
+  font-size: 37px;
+  margin-right: 12px;
+}
+main .inicio-container .text-container .logo-container-init h1, main .inicio-container .text-container .logo-container-init .h1 {
+  font-weight: bold;
+  padding-top: 9px;
+}
+main .inicio-container .text-container p {
+  width: 80%;
+  text-align: justify;
+  font-size: 15px;
+}
+main .inicio-container .text-container .textos-cont {
+  width: 850px;
+  height: 520px;
+  margin-top: 40px;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+main .inicio-container .text-container .textos-cont div {
+  cursor: pointer;
+  background-color: white;
+  width: 48%;
+  height: 48%;
+  margin: 5px;
+  border-radius: 30px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  transition: ease-out 0.3s;
+}
+main .inicio-container .text-container .textos-cont div p {
+  margin-top: 5px;
+  font-size: 13px;
+}
+main .inicio-container .text-container .textos-cont div:hover {
+  background-color: rgb(119, 209, 231);
+  box-shadow: 3px 3px 0;
+  transform: translateX(-3px) translateY(-3px);
+}
+main .user-admin-cnt {
+  width: 1400px;
+  height: 670px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+}
+main .user-admin-cnt div {
+  width: 48%;
+  height: 100%;
+  border: 3px solid rgb(241, 110, 110);
+  border-radius: 20px;
+}
+main .user-admin-cnt .listado-users-gestion {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+main .user-admin-cnt table {
+  width: 80%;
+  margin-top: 20px;
+}
+main .user-admin-cnt table .title-table {
+  font-weight: bold;
+  text-align: center;
+  font-size: 20px;
+}
+main .user-admin-cnt table td {
+  height: 40px;
+}
+main .user-admin-cnt table .correo {
+  width: 100px;
+}
+main .user-admin-cnt table .rol-box {
+  text-align: center;
+}
+main .user-admin-cnt table .editar {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+main .user-admin-cnt table .editar a {
+  background-color: rgb(119, 209, 231);
+  border-radius: 20px;
+  border: none;
+  width: 60px;
+  height: 35px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: ease-out 0.3s;
+}
+main .user-admin-cnt table .editar a:hover {
+  background-color: rgb(72, 176, 202);
+  box-shadow: 3px 3px 0;
+  transform: translateX(-3px) translateY(-3px);
+}
+main .user-admin-cnt table .borrar {
+  width: 40px;
+}
+main .user-admin-cnt table .borrar button {
+  background-color: rgb(241, 110, 110);
+  border-radius: 20px;
+  border: none;
+  width: 60px;
+  height: 35px;
+  transition: ease-out 0.3s;
+}
+main .user-admin-cnt table .borrar button:hover {
+  background-color: rgb(211, 64, 64);
+  box-shadow: 3px 3px 0;
+  transform: translateX(-3px) translateY(-3px);
 }
 main .container-products {
   width: 1000px;
