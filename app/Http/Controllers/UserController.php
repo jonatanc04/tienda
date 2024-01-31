@@ -3,15 +3,12 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Models\Producto;
 
-class TiendaController extends Controller
+class UserController extends Controller
 {
-
     public function __construct()
     {
-        $this->middleware('auth',
-        ['only' => ['create', 'store', 'edit', 'update', 'destroy']]);
+        $this->middleware(['auth', 'roles:admin']);
     }
 
     /**
@@ -21,8 +18,7 @@ class TiendaController extends Controller
      */
     public function index()
     {
-        $productos = Producto::get();
-        return view('tienda.index', compact('productos'));
+        //
     }
 
     /**
@@ -54,8 +50,7 @@ class TiendaController extends Controller
      */
     public function show($id)
     {
-        $producto = Producto::find($id);
-        return view('tienda.show', compact('producto', 'id'));
+        //
     }
 
     /**

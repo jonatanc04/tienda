@@ -19,7 +19,8 @@ Route::get('/', function () {
     return view('inicio');
 })->name('inicio');
 
-Route::resource('tienda', TiendaController::class);
+Route::resource('tienda', TiendaController::class)->middleware('auth');
+Route::resource('user', UserController::class)->middleware('auth');
 
 Route::get('error', function () {
     return view('404');
