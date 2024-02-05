@@ -12095,6 +12095,7 @@ main .inicio-container .img-container {
   display: flex;
   justify-content: center;
   overflow: hidden;
+  background-color: white;
 }
 main .inicio-container .img-container img {
   height: 100%;
