@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Http;
 use App\Models\Producto;
 
 class TiendaController extends Controller
@@ -32,7 +33,17 @@ class TiendaController extends Controller
      */
     public function create()
     {
-        //
+        $api = 'http://localhost/carrito/public/api/carrito';
+        $response = Http::get($api);
+
+        if ($response->successful()) {
+            $carrito = json_decode($response->body(), true);
+        } else {
+            $errorMessage = "Error al obtener datos desde la API";
+            return view('tienda.create', compact('errorMessage'));
+        }
+
+        return view('tienda.create', compact('carrito'));
     }
 
     /**
@@ -43,7 +54,7 @@ class TiendaController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $api = 'http://localhost/carrito/public/api/carrito';
     }
 
     /**

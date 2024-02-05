@@ -6,7 +6,7 @@
     <a href="{{ route('inicio') }}"><p>Inicio</p></a>
     @if(auth()->check())
       <a href="{{ route('tienda.index') }}"><p>Productos</p></a>
-      <a href="{{ route('inicio') }}">
+      <a href="{{ route('tienda.create') }}">
         <div class="carrito-button">
           <img src={{asset("img/carrito.png")}} class="image-product" />
           <div class="cant-prod">1</div>
