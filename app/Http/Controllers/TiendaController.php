@@ -28,22 +28,16 @@ class TiendaController extends Controller
 
     /**
      * Show the form for creating a new resource.
-     *
+     * return view('tienda.create', compact('carrito'));
      * @return \Illuminate\Http\Response
      */
     public function create()
     {
         $api = 'http://localhost/carrito/public/api/carrito';
-        $response = Http::get($api);
-
-        if ($response->successful()) {
-            $carrito = json_decode($response->body(), true);
-        } else {
-            $errorMessage = "Error al obtener datos desde la API";
-            return view('tienda.create', compact('errorMessage'));
-        }
-
-        return view('tienda.create', compact('carrito'));
+        $response = Http::withToken('1234')->get($api);
+        
+        var_dump($response->body());
+        
     }
 
     /**
