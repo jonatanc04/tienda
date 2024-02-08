@@ -10,7 +10,9 @@
     @else
         @if(isset($carrito) && !empty($carrito))
             @forelse($carrito as $prodCarrito)
-                <p>{{$prodCarrito['id']}}</p>
+                <div>
+                    <p>ID Producto: {{$prodCarrito['idProducto']}} Cantidad: {{$prodCarrito['cantidad']}}</p>
+                </div>
             @empty
                 <p>No se encontraron productos</p>
             @endforelse

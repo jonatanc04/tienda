@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\CarritoController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\TiendaController;
 use App\Http\Controllers\LoginController;
@@ -22,6 +23,7 @@ Route::get('/', function () {
 
 Route::resource('tienda', TiendaController::class)->middleware('auth');
 Route::resource('user', UserController::class)->middleware('auth');
+Route::resource('carrito', CarritoController::class)->middleware('auth');
 
 Route::get('error', function () {
     return view('404');

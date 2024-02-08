@@ -3,9 +3,10 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Http;
 use App\Models\Producto;
 
-class TiendaController extends Controller
+class CarritoController extends Controller
 {
 
     public function __construct()
@@ -21,13 +22,16 @@ class TiendaController extends Controller
      */
     public function index()
     {
+        $api = 'http://carrito/api/carrito';
         $productos = Producto::get();
-        return view('tienda.index', compact('productos'));
+        $response = Http::withToken('1234')->get($api);
+        $carrito = json_decode($response->body(),true);
+        return view('carrito.index', compact('carrito', 'productos'));
     }
 
     /**
      * Show the form for creating a new resource.
-     * 
+     *
      * @return \Illuminate\Http\Response
      */
     public function create()
@@ -43,7 +47,34 @@ class TiendaController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $idCliente = $request->get('idCliente');
+        $idProducto = $request->get('idProducto');
+
+        $api = 'http://carrito/api/carrito';
+        $response = Http::withToken('1234')->get($api);
+        $carrito = json_decode($response->body(),true);
+
+        $filtro = function ($item) use ($idCliente, $idProducto) {
+            return $item['idCliente'] == $idCliente && $item['idProducto'] == $idProducto;
+        };
+
+        $productoFiltrado = array_filter($carrito, $filtro);
+    
+        if (empty($productoFiltrado)) {
+            $response = Http::withToken('1234')->post($api, [
+                'idCliente' => $idCliente,
+                'idProducto' => $idProducto,
+                'cantidad' => $request->get('cantidad')
+            ]);
+        } else {
+            $id = $productoFiltrado[0]['id'];
+            $response = Http::withToken('1234')->put($api."/".$id, [
+                "cantidad" => $productoFiltrado[0]['cantidad'] + $request -> get('cantidad')
+            ]);
+        }
+
+        $productos = Producto::get();
+        return view('tienda.index', compact('productos'));
     }
 
     /**
@@ -54,8 +85,7 @@ class TiendaController extends Controller
      */
     public function show($id)
     {
-        $producto = Producto::find($id);
-        return view('tienda.show', compact('producto', 'id'));
+        //
     }
 
     /**
