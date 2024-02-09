@@ -10,9 +10,16 @@
     @else
         @if(isset($carrito) && !empty($carrito))
             @forelse($carrito as $prodCarrito)
-                <div>
-                    <p>ID Producto: {{$prodCarrito['idProducto']}} Cantidad: {{$prodCarrito['cantidad']}}</p>
-                </div>
+                @forelse($productos as $producto)
+                    @if ($producto->id == $prodCarrito['idProducto'])
+                        <div>
+                            <img src={{asset("img/$producto->foto")}} class="image-product" />
+                            <p>ID Producto: {{$prodCarrito['idProducto']}} Cantidad: {{$prodCarrito['cantidad']}}</p>
+                        </div>
+                    @endif
+                @empty
+                    <p>Error en la carga de los productos</p>
+                @endforelse
             @empty
                 <p>No se encontraron productos</p>
             @endforelse

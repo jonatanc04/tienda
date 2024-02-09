@@ -24,7 +24,9 @@ class CarritoController extends Controller
     {
         $api = 'http://carrito/api/carrito';
         $productos = Producto::get();
-        $response = Http::withToken('1234')->get($api);
+        $response = Http::withToken('1234')->get($api, [
+            "idCliente" => auth()->user()->id
+        ]);
         $carrito = json_decode($response->body(),true);
         return view('carrito.index', compact('carrito', 'productos'));
     }
@@ -47,31 +49,12 @@ class CarritoController extends Controller
      */
     public function store(Request $request)
     {
-        $idCliente = $request->get('idCliente');
-        $idProducto = $request->get('idProducto');
-
         $api = 'http://carrito/api/carrito';
-        $response = Http::withToken('1234')->get($api);
-        $carrito = json_decode($response->body(),true);
-
-        $filtro = function ($item) use ($idCliente, $idProducto) {
-            return $item['idCliente'] == $idCliente && $item['idProducto'] == $idProducto;
-        };
-
-        $productoFiltrado = array_filter($carrito, $filtro);
-    
-        if (empty($productoFiltrado)) {
-            $response = Http::withToken('1234')->post($api, [
-                'idCliente' => $idCliente,
-                'idProducto' => $idProducto,
-                'cantidad' => $request->get('cantidad')
-            ]);
-        } else {
-            $id = $productoFiltrado[0]['id'];
-            $response = Http::withToken('1234')->put($api."/".$id, [
-                "cantidad" => $productoFiltrado[0]['cantidad'] + $request -> get('cantidad')
-            ]);
-        }
+        $response = Http::withToken('1234')->post($api, [
+            'idCliente' => $request->get('idCliente'),
+            'idProducto' => $request->get('idProducto'),
+            'cantidad' => $request->get('cantidad')
+        ]);
 
         $productos = Producto::get();
         return view('tienda.index', compact('productos'));
