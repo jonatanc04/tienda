@@ -79,7 +79,7 @@ class CarritoController extends Controller
      */
     public function edit($id)
     {
-        //
+        
     }
 
     /**
@@ -91,7 +91,12 @@ class CarritoController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $api = 'http://carrito/api/carrito/'.$id;
+        $response = Http::withToken('1234')->put($api, [
+            'cantidad' => $request->get('cantidad')
+        ]);
+
+        return redirect('carrito');
     }
 
     /**
@@ -102,6 +107,9 @@ class CarritoController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $api = 'http://carrito/api/carrito/'.$id;
+        $response = Http::withToken('1234')->delete($api);
+
+        return redirect('carrito');
     }
 }

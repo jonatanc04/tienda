@@ -633,6 +633,125 @@ main {
 
         }
     }
+
+    .prod-carrito {
+        width: 1000px;
+        height: 200px;
+        margin-bottom: 10px;
+
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+
+        border: 3px solid rgb(241, 110, 110);
+        border-radius: 20px;
+
+        img {
+            margin-left: 20px;
+            width: 180px;
+            height: 180px;
+        }
+
+        .texto-produc {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+
+            width: 60%;
+            height: 100%;
+
+            p {
+                margin-bottom: 0px;
+                width: 80%;
+            }
+
+            .descrip-prod {
+                text-align: justify;
+            }
+
+            .precio-total {
+                font-size: 15px;
+                text-align: right;
+            }
+        }
+
+        .edit-delete {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+
+            width: 20%;
+            height: 100%;
+
+            .controlador-prod {
+                width: 80%;
+                .cant-mod{
+                    flex-direction: row;
+                    width: 100%;
+                    height: 30px;
+                    font-size: 20px;
+                    margin-bottom: 10px;
+                    input {
+                        width: 50px;
+                        height: 100%;
+                    }
+                }
+                .act-prod {
+                    width: 89%;
+                    height: 30px;
+                    background-color: rgb(119, 209, 231);
+                    margin-bottom: 8px;
+                    border: none;
+                    border-radius: 20px;
+                    transition: ease-out 0.3s;
+                    
+                    &:hover {
+                        background-color: rgb(184, 223, 233);
+                        box-shadow: 3px 3px 0;
+                        transform: translateX(-3px) translateY(-3px);
+                    }
+                }
+
+                .del-prod {
+                    width: 89%;
+                    height: 30px;
+                    background-color: rgb(241, 110, 110);
+                    border: none;
+                    border-radius: 20px;
+                    transition: ease-out 0.3s;
+                    
+                    &:hover {
+                        background-color: rgb(240, 150, 150);
+                        box-shadow: 3px 3px 0;
+                        transform: translateX(-3px) translateY(-3px);
+                    }
+                }
+            }
+        }
+    }
+
+    .finalizar-compra {
+        width: 1000px;
+        height: 40px;
+        margin-top: 10px;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+
+        p {
+            font-size: 35px;
+            margin: 0;
+            padding: 0;
+        }
+
+        button {
+            height: 100%;
+            width: 100px;
+        }
+    }
 }
 
 footer {

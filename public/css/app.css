@@ -12095,7 +12095,6 @@ main .inicio-container .img-container {
   display: flex;
   justify-content: center;
   overflow: hidden;
-  background-color: white;
 }
 main .inicio-container .img-container img {
   height: 100%;
@@ -12498,6 +12497,107 @@ main .form-edit-user form .align-button-box {
   width: 100%;
   display: flex;
   justify-content: center;
+}
+main .prod-carrito {
+  width: 1000px;
+  height: 200px;
+  margin-bottom: 10px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  border: 3px solid rgb(241, 110, 110);
+  border-radius: 20px;
+}
+main .prod-carrito img {
+  margin-left: 20px;
+  width: 180px;
+  height: 180px;
+}
+main .prod-carrito .texto-produc {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 60%;
+  height: 100%;
+}
+main .prod-carrito .texto-produc p {
+  margin-bottom: 0px;
+  width: 80%;
+}
+main .prod-carrito .texto-produc .descrip-prod {
+  text-align: justify;
+}
+main .prod-carrito .texto-produc .precio-total {
+  font-size: 15px;
+  text-align: right;
+}
+main .prod-carrito .edit-delete {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 20%;
+  height: 100%;
+}
+main .prod-carrito .edit-delete .controlador-prod {
+  width: 80%;
+}
+main .prod-carrito .edit-delete .controlador-prod .cant-mod {
+  flex-direction: row;
+  width: 100%;
+  height: 30px;
+  font-size: 20px;
+  margin-bottom: 10px;
+}
+main .prod-carrito .edit-delete .controlador-prod .cant-mod input {
+  width: 50px;
+  height: 100%;
+}
+main .prod-carrito .edit-delete .controlador-prod .act-prod {
+  width: 89%;
+  height: 30px;
+  background-color: rgb(119, 209, 231);
+  margin-bottom: 8px;
+  border: none;
+  border-radius: 20px;
+  transition: ease-out 0.3s;
+}
+main .prod-carrito .edit-delete .controlador-prod .act-prod:hover {
+  background-color: rgb(184, 223, 233);
+  box-shadow: 3px 3px 0;
+  transform: translateX(-3px) translateY(-3px);
+}
+main .prod-carrito .edit-delete .controlador-prod .del-prod {
+  width: 89%;
+  height: 30px;
+  background-color: rgb(241, 110, 110);
+  border: none;
+  border-radius: 20px;
+  transition: ease-out 0.3s;
+}
+main .prod-carrito .edit-delete .controlador-prod .del-prod:hover {
+  background-color: rgb(240, 150, 150);
+  box-shadow: 3px 3px 0;
+  transform: translateX(-3px) translateY(-3px);
+}
+main .finalizar-compra {
+  width: 1000px;
+  height: 40px;
+  margin-top: 10px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+}
+main .finalizar-compra p {
+  font-size: 35px;
+  margin: 0;
+  padding: 0;
+}
+main .finalizar-compra button {
+  height: 100%;
+  width: 100px;
 }
 
 footer {

@@ -15,7 +15,7 @@
             @csrf
             <input type="hidden" name='idCliente' value={{auth()->user()->id}}>
             <input type="hidden" name='idProducto' value={{$producto->id}}>
-            <input type="number" name="cantidad" value="1" min="1" max="100">
+            <input type="number" name="cantidad" value="1" min="1" max="99">
             <input type="submit" name="anyade" value="Añadir al carrito">
           </form>  
         </div>
