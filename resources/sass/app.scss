@@ -747,9 +747,23 @@ main {
             padding: 0;
         }
 
-        button {
+        form {
             height: 100%;
-            width: 100px;
+        }
+
+        .button {
+            height: 100%;
+            width: 200px;
+            background-color: rgb(241, 110, 110);
+            border: none;
+            border-radius: 20px;
+            transition: ease-out 0.3s;
+            
+            &:hover {
+                background-color: rgb(240, 150, 150);
+                box-shadow: 3px 3px 0;
+                transform: translateX(-3px) translateY(-3px);
+            }
         }
     }
 }

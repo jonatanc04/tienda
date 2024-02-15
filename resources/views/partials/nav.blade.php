@@ -9,7 +9,12 @@
       <a href="{{ route('carrito.index') }}">
         <div class="carrito-button">
           <img src={{asset("img/carrito.png")}} class="image-product" />
-          <div class="cant-prod">1</div>
+          @php
+            $cantidadProductos = app('App\Http\Controllers\CarritoController')->cantidadProductos();
+          @endphp
+          @if ($cantidadProductos > 0)
+            <div class="cant-prod">{{ $cantidadProductos }}</div>
+          @endif
         </div>
       </a>
       @if(auth()->user()->rol === 'admin')

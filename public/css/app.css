@@ -12595,9 +12595,21 @@ main .finalizar-compra p {
   margin: 0;
   padding: 0;
 }
-main .finalizar-compra button {
+main .finalizar-compra form {
   height: 100%;
-  width: 100px;
+}
+main .finalizar-compra .button {
+  height: 100%;
+  width: 200px;
+  background-color: rgb(241, 110, 110);
+  border: none;
+  border-radius: 20px;
+  transition: ease-out 0.3s;
+}
+main .finalizar-compra .button:hover {
+  background-color: rgb(240, 150, 150);
+  box-shadow: 3px 3px 0;
+  transform: translateX(-3px) translateY(-3px);
 }
 
 footer {

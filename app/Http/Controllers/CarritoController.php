@@ -112,4 +112,18 @@ class CarritoController extends Controller
 
         return redirect('carrito');
     }
+
+    public function cantidadProductos()
+    {
+        $api = 'http://carrito/api/carrito';
+        $response = Http::withToken('1234')->get($api, [
+            "idCliente" => auth()->user()->id
+        ]);
+        
+        $productosEnCarrito = $response->json();
+        $cantidadProductos = count($productosEnCarrito);
+        
+        return $cantidadProductos;
+    }
+
 }

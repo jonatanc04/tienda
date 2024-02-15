@@ -5,6 +5,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\TiendaController;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\UserController;
+use App\Http\Controllers\PedidoController;
 
 /*
 |--------------------------------------------------------------------------
@@ -24,6 +25,9 @@ Route::get('/', function () {
 Route::resource('tienda', TiendaController::class)->middleware('auth');
 Route::resource('user', UserController::class)->middleware('auth');
 Route::resource('carrito', CarritoController::class)->middleware('auth');
+Route::get('confirmarPedido', [PedidoController::class, 'confirmarPedido'])->name('confirmar');
+Route::get('/carrito/cantidad', 'CarritoController@cantidadProductos')->name('carrito.cantidad');
+
 
 Route::get('error', function () {
     return view('404');

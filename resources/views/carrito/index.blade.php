@@ -53,7 +53,10 @@
             @endforelse
             <div class="finalizar-compra">
                 <p>Precio total: {{$cantidadTotal}} €</p>
-                <button>Realizar compra</button>
+                <form action="{{ route('confirmar')}}" method="GET">
+                    @csrf
+                    <input class="button" type="submit" value="Realizar compra">
+                </form>                
             </div>
         @else
             <p>El carrito está vacío</p>
