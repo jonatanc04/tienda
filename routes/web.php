@@ -22,6 +22,10 @@ Route::get('/', function () {
     return view('inicio');
 })->name('inicio');
 
+Route::get('/resumen', function () {
+    return view('resumen');
+})->name('resumen');
+
 Route::resource('tienda', TiendaController::class)->middleware('auth');
 Route::resource('user', UserController::class)->middleware('auth');
 Route::resource('carrito', CarritoController::class)->middleware('auth');

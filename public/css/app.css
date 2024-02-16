@@ -12611,6 +12611,38 @@ main .finalizar-compra .button:hover {
   box-shadow: 3px 3px 0;
   transform: translateX(-3px) translateY(-3px);
 }
+main .resumen-pedido {
+  margin-left: 20px;
+}
+main .resumen-pedido thead {
+  margin-bottom: 10px;
+}
+main .resumen-pedido td {
+  margin-right: 20px;
+  padding-right: 20px;
+}
+main .resumen-pedido .cantidad {
+  text-align: center;
+}
+main .resumen-pedido .precio {
+  text-align: right;
+}
+main .final-comp {
+  margin-top: 20px;
+  background-color: rgb(119, 209, 231);
+  border-radius: 20px;
+  width: 120px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: ease-out 0.3s;
+}
+main .final-comp:hover {
+  background-color: rgb(89, 162, 180);
+  box-shadow: 3px 3px 0;
+  transform: translateX(-3px) translateY(-3px);
+}
 
 footer {
   background-color: rgb(119, 209, 231);

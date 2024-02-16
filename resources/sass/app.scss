@@ -766,6 +766,39 @@ main {
             }
         }
     }
+
+    .resumen-pedido {
+        margin-left: 20px;
+        thead {
+            margin-bottom: 10px;
+        }
+        td {
+            margin-right: 20px;
+            padding-right: 20px;
+        }
+        .cantidad {
+            text-align: center;
+        }
+        .precio {
+            text-align: right;
+        }
+    }
+    .final-comp {
+        margin-top: 20px;
+        background-color: rgb(119, 209, 231);
+        border-radius: 20px;
+        width: 120px;
+        height: 40px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        transition: ease-out 0.3s;
+        &:hover {
+            background-color: rgb(89, 162, 180);
+            box-shadow: 3px 3px 0;
+            transform: translateX(-3px) translateY(-3px);
+        }
+    }
 }
 
 footer {

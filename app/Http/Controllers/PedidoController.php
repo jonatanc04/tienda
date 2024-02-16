@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Support\Facades\Http;
 use App\Models\Pedido;
+use App\Models\Producto;
 use App\Models\LineasPedido;
 use Carbon\Carbon;
 
@@ -33,6 +34,7 @@ class PedidoController extends Controller
             $i++;
         }
 
-        return redirect()->route('tienda.index');
+        $productos = Producto::get();
+        return view('resumen', compact('data', 'productos'));
     }
 }
